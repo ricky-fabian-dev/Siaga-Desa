@@ -168,8 +168,8 @@ export const CitizenDashboard: React.FC<CitizenDashboardProps> = ({
               onClick={onOpenInstallGuide}
               className="px-3.5 py-2 bg-white text-red-700 hover:bg-red-50 rounded-xl text-xs font-bold transition-all cursor-pointer shadow-md flex items-center gap-1.5"
             >
-              <Download className="w-3.5 h-3.5" />
-              <span>Unduh APK / Pasang HP</span>
+              <Smartphone className="w-3.5 h-3.5" />
+              <span>Pasang di HP</span>
             </button>
           </div>
         </div>

@@ -161,16 +161,15 @@ export default function App() {
 
           {/* User Controls & View Switcher */}
           <div className="flex items-center gap-2">
-            {/* Quick APK & Install Guide Button */}
+            {/* Quick Install Guide Button */}
             <button
               type="button"
               onClick={() => setIsInstallGuideOpen(true)}
               className="flex items-center gap-1.5 px-2.5 py-1.5 bg-red-50 hover:bg-red-100 text-red-700 border border-red-200/90 rounded-xl text-xs font-bold transition-all cursor-pointer shadow-2xs"
-              title="Unduh APK & Pasang di HP Warga"
+              title="Panduan Pasang di HP Warga"
             >
-              <Download className="w-3.5 h-3.5 text-red-600" />
-              <span className="hidden sm:inline">Unduh APK / Pasang HP</span>
-              <span className="sm:hidden">Unduh APK</span>
+              <Smartphone className="w-3.5 h-3.5 text-red-600" />
+              <span>Pasang di HP</span>
             </button>
 
             {authLoading ? (
@@ -296,8 +295,8 @@ export default function App() {
                   onClick={() => setIsInstallGuideOpen(true)}
                   className="w-full py-2.5 text-xs text-slate-700 hover:text-red-700 font-bold flex items-center justify-center gap-2 cursor-pointer bg-slate-50 hover:bg-red-50 border border-slate-200 rounded-xl transition-all"
                 >
-                  <Download className="w-4 h-4 text-red-600" />
-                  <span>Unduh File APK & Pasang di Layar Utama HP</span>
+                  <Smartphone className="w-4 h-4 text-red-600" />
+                  <span>Cara Pasang di Layar HP (Tanpa Play Store)</span>
                 </button>
               </div>
             </div>
@@ -380,8 +379,8 @@ export default function App() {
             onClick={() => setIsInstallGuideOpen(true)}
             className="text-red-600 hover:underline font-semibold flex items-center gap-1.5 cursor-pointer"
           >
-            <Download className="w-3.5 h-3.5" />
-            <span>Unduh APK & Pasang HP</span>
+            <Smartphone className="w-3.5 h-3.5" />
+            <span>Panduan Pasang HP</span>
           </button>
         </div>
       </footer>
