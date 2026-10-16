@@ -1,0 +1,17 @@
+name: siaga-keluarga
+
+services:
+  siaga-keluarga:
+    image: siaga-keluarga:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: siaga-keluarga
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+    labels:
+      icon: "https://raw.githubusercontent.com/rickyfabian/siaga-keluarga/main/public/icon.svg"
+      title: "Siaga Keluarga"

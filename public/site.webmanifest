@@ -1,0 +1,32 @@
+{
+  "id": "/",
+  "name": "Siaga Keluarga - Tanggap Darurat Desa",
+  "short_name": "SiagaDesa",
+  "description": "Sistem peringatan darurat warga terhubung langsung ke Tim Relawan dan Perangkat Desa dengan pelacakan GPS.",
+  "theme_color": "#dc2626",
+  "background_color": "#f8fafc",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

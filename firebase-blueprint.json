@@ -1,0 +1,242 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Profil identitas warga atau relawan/perangkat desa.",
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": "string",
+          "description": "Nama lengkap warga",
+          "maxLength": 100
+        },
+        "callSign": {
+          "type": "string",
+          "description": "Nama panggilan / pengenal unik agar mudah dibedakan di lingkungan",
+          "maxLength": 60
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "Nomor WhatsApp atau HP aktif",
+          "maxLength": 20
+        },
+        "address": {
+          "type": "string",
+          "description": "Alamat rumah / patokan jalan",
+          "maxLength": 200
+        },
+        "rtRw": {
+          "type": "string",
+          "description": "RT dan RW domisili",
+          "maxLength": 30
+        },
+        "emergencyContactName": {
+          "type": "string",
+          "description": "Nama kontak keluarga darurat",
+          "maxLength": 100
+        },
+        "emergencyContactPhone": {
+          "type": "string",
+          "description": "Nomor telepon keluarga darurat",
+          "maxLength": 20
+        },
+        "notes": {
+          "type": "string",
+          "description": "Keterangan medis penting atau info lansia/anak",
+          "maxLength": 300
+        },
+        "role": {
+          "type": "string",
+          "description": "Peran pengguna dalam aplikasi",
+          "enum": ["warga", "relawan", "perangkat_desa", "admin"]
+        },
+        "email": {
+          "type": "string",
+          "description": "Email akun pengguna",
+          "maxLength": 120
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Waktu pendaftaran akun"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Waktu pembaruan profil"
+        }
+      },
+      "required": ["displayName", "callSign", "phoneNumber", "address", "role"]
+    },
+    "AdminDoc": {
+      "title": "AdminDoc",
+      "description": "Dokumen verifikasi hak akses tim relawan atau perangkat desa.",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "Email tim respon darurat",
+          "maxLength": 120
+        },
+        "role": {
+          "type": "string",
+          "description": "Tingkat hak akses",
+          "enum": ["relawan", "perangkat_desa", "admin"]
+        },
+        "name": {
+          "type": "string",
+          "description": "Nama personil",
+          "maxLength": 100
+        },
+        "addedAt": {
+          "type": "string",
+          "description": "Waktu verifikasi hak akses"
+        }
+      },
+      "required": ["email", "role"]
+    },
+    "SosAlert": {
+      "title": "SosAlert",
+      "description": "Laporan darurat SOS yang dikirim warga.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "UID pelapor",
+          "maxLength": 128
+        },
+        "userName": {
+          "type": "string",
+          "description": "Nama warga pelapor",
+          "maxLength": 100
+        },
+        "userCallSign": {
+          "type": "string",
+          "description": "Nama panggilan pengenal warga",
+          "maxLength": 60
+        },
+        "userPhone": {
+          "type": "string",
+          "description": "Nomor telepon aktif pelapor",
+          "maxLength": 20
+        },
+        "emergencyType": {
+          "type": "string",
+          "description": "Kategori situasi darurat",
+          "enum": ["medis", "kebakaran", "bencana", "keamanan", "lainnya"]
+        },
+        "description": {
+          "type": "string",
+          "description": "Keterangan situasi atau patokan detail",
+          "maxLength": 500
+        },
+        "address": {
+          "type": "string",
+          "description": "Alamat warga pelapor",
+          "maxLength": 200
+        },
+        "rtRw": {
+          "type": "string",
+          "description": "RT/RW pelapor",
+          "maxLength": 30
+        },
+        "latitude": {
+          "type": "number",
+          "description": "Koordinat lintang GPS"
+        },
+        "longitude": {
+          "type": "number",
+          "description": "Koordinat bujur GPS"
+        },
+        "accuracy": {
+          "type": "number",
+          "description": "Akurasi GPS dalam meter"
+        },
+        "status": {
+          "type": "string",
+          "description": "Status tindak lanjut SOS",
+          "enum": ["menunggu", "proses", "selesai", "dibatalkan"]
+        },
+        "handledByUserId": {
+          "type": "string",
+          "description": "UID petugas/relawan yang merespons",
+          "maxLength": 128
+        },
+        "handledByName": {
+          "type": "string",
+          "description": "Nama relawan yang menangani",
+          "maxLength": 100
+        },
+        "handledAt": {
+          "type": "string",
+          "description": "Waktu respon diambil"
+        },
+        "resolvedNotes": {
+          "type": "string",
+          "description": "Catatan penanganan akhir dari tim relawan",
+          "maxLength": 500
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Waktu pengiriman SOS"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Waktu pembaharuan status SOS"
+        }
+      },
+      "required": ["userId", "userName", "userCallSign", "userPhone", "emergencyType", "status"]
+    },
+    "VillageContact": {
+      "title": "VillageContact",
+      "description": "Nomor kontak darurat desa dan instansi terkait.",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Nama instansi / petugas",
+          "maxLength": 100
+        },
+        "phone": {
+          "type": "string",
+          "description": "Nomor panggilan darurat",
+          "maxLength": 20
+        },
+        "category": {
+          "type": "string",
+          "description": "Kategori pos siaga",
+          "maxLength": 50
+        },
+        "order": {
+          "type": "number",
+          "description": "Urutan tampilan kontak"
+        }
+      },
+      "required": ["title", "phone"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "UserProfile"
+      },
+      "description": "Menyimpan data identitas profil warga atau relawan"
+    },
+    "/admins/{userId}": {
+      "schema": {
+        "$ref": "AdminDoc"
+      },
+      "description": "Daftar pengguna dengan otoritas relawan atau perangkat desa"
+    },
+    "/sos_alerts/{alertId}": {
+      "schema": {
+        "$ref": "SosAlert"
+      },
+      "description": "Koleksi panggilan darurat SOS yang dapat dipantau dan ditangani relawan"
+    },
+    "/village_contacts/{contactId}": {
+      "schema": {
+        "$ref": "VillageContact"
+      },
+      "description": "Direktori kontak darurat penting tingkat desa"
+    }
+  }
+}

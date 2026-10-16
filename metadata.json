@@ -1,0 +1,10 @@
+{
+  "name": "Siaga Keluarga - Tanggap Darurat Warga \u0026 Desa",
+  "description": "Sistem peringatan darurat warga berbasis web terhubung langsung ke Tim Relawan dan Perangkat Desa dengan pelacakan GPS, identitas terverifikasi, dan koordinasi cepat.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
